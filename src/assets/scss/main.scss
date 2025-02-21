@@ -146,3 +146,23 @@
     text-align: right;
     justify-content: flex-end;
 }
+
+.pos-abs {
+    position: absolute;
+    right: 10px;
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .pos-abs {
+        display: none;
+    }
+
+    .resume-container {
+        box-shadow: none !important;
+    }
+}
