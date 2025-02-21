@@ -152,6 +152,11 @@
     right: 10px;
 }
 
+a {
+    color: var(--primaryBg);
+    text-decoration: none;
+}
+
 @media print {
     body {
         -webkit-print-color-adjust: exact;

@@ -21,7 +21,7 @@
                 <span *ngIf="profile.mobile">{{profile.mobile}}</span>
                 <span *ngIf="profile.email">{{profile.email}}</span>
                 <span *ngIf="profile.linkedIn">
-                    <a [href]="profile.linkedIn">{{profile.linkedInlabel}}</a>
+                    <a target="_blank" [href]="profile.linkedIn">{{profile.linkedInlabel}}</a>
                 </span>
                 <span *ngIf="profile.location">{{profile.location}}</span>
             </div>
