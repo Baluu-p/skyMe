@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@use "assets/scss/main.scss";
+
+:root {
+    --primaryBg: #00676e;
+    --primaryText: #1a252a;
+    --secondaryText: #1a252a;
+    --primaryAltText: #fff;
+}
