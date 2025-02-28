@@ -1,7 +1,8 @@
 <div class="jc-center">
-    <div class="pos-abs">
+    <div *ngIf="!preview" class="pos-abs">
         <div class="buttons-container">
             <button class="box-btn" (click)="loadResume()">Load</button>
+            <button class="box-btn" (click)="preview = !preview">Preview</button>
             <button class="box-btn" (click)="downloadPDF()">Download PDF</button>
         </div>
         <textarea rows="1" [style.height.px]="750" [style.width.px]="750" [value]="formattedJson"
@@ -46,8 +47,8 @@
             <div *ngFor="let exp of profile.workExperience.experience" class="section-content section-experience">
                 <div class="exp-header">
                     <div class="row no-gutters d-flex jc-between">
-                        <div class="bold">{{exp.role}}
-                            <span class="row no-gutters light-detail">( {{exp.company}} )</span>
+                        <div class="bold">{{exp.role}} |
+                            <span class="row no-gutters light-detail">{{exp.company}}</span>
                         </div>
                         <div class="light-detail">{{exp.duration}}</div>
                     </div>
@@ -69,7 +70,7 @@
         </div>
         <div *ngIf="profile.education" class="resume-section">
             <div class="section-title">{{profile.awards.title}}</div>
-            <div *ngFor="let list of profile.awards.content" class="section-content row no-gutters d-flex pb-10">
+            <div *ngFor="let list of profile.awards.content" class="section-content row no-gutters d-flex pb-5">
                 <div class="col-5">
                     <span class="pr-10 icon-color">✔</span>
                     <span>{{list.title}}</span>

@@ -14,6 +14,7 @@ export class AppComponent {
   @ViewChild('resumeContainer', { static: false }) resumeContainer!: ElementRef;
 
   title = 'skyMe';
+  preview = false;
 
   resumeDetails: any = [];
 

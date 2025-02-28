@@ -9,7 +9,7 @@
         "location": "",
         "summary": {
             "title": "Summary",
-            "description": "Innovative Senior Software Engineer with over 7 years of experience at ePS, specializing in building robust, user-friendly applications. Skilled in modern web technologies and frameworks, I aim to enhance ePS's software solutions with a focus on performance and scalability. Successfully optimized code, improving user experience."
+            "description": "Innovative Senior Software Engineer with 7+ years of experience in developing robust, user-friendly applications. Proficient in modern web technologies and frameworks, with a strong focus on performance optimization and scalability. Passionate about delivering high-quality software solutions that enhance user experience and efficiency."
         },
         "skills": {
             "title": "Skills",
@@ -42,11 +42,11 @@
                     "duration": "2023 - Present",
                     "location": "Bangalore, India",
                     "description": [
-                        "Led the development and implementation of a modernized web application, enhancing user engagement and increasing system efficiency.",
-                        "Evaluated UX and UI designs for technical feasibility, resulting improvement in user satisfaction and interface usability.",
-                        "Built new UI components in Angular, ensuring quality standards and fulfilling requirements, which reduced development time.",
-                        "Refactored code to enhance efficiency and performance, leading to increased application speed and reliability.",
-                        "Onboarded junior UI developers by providing coaching on product features and technologies, improving team productivity."
+                        "Led the development and modernization of a web application, enhancing user engagement and system efficiency.",
+                        "Assessed UX/UI designs for technical feasibility, improving user satisfaction and interface usability.",
+                        "Developed new UI components in Angular, adhering to quality standards and reducing development time.",
+                        "Refactored code for better efficiency and performance, resulting in increased application speed and reliability.",
+                        "Mentored junior UI developers, providing coaching on product features and technologies, boosting team productivity."
                     ]
                 },
                 {
@@ -55,11 +55,11 @@
                     "duration": "2021 - 2023",
                     "location": "Bangalore, India",
                     "description": [
-                        "Working as a full-stack developer to create software applications that fulfill user requirements.",
-                        "Resolving customer issues by understanding their concerns or new requirements and providing solutions that satisfy them.",
-                        "Utilizing the Scrum framework to collaborate with the team in the software development process and achieve a shared goal.",
-                        "Ensure high code quality with minimal issues by adhering to coding standards and employing techniques such as test-driven development, pair programming, and others.",
-                        "Refactoring the code to improve performance and reduce its size while also maintaining unit tests to ensure it remains error-free."
+                        "Developed full-stack software applications tailored to user requirements, ensuring functionality and scalability.",
+                        "Resolved customer issues by understanding their needs and delivering effective solutions.",
+                        "Collaborated within a Scrum framework, contributing to a streamlined development process and shared team goals.",
+                        "Maintained high code quality by following coding standards and utilizing test-driven development, pair programming, and other best practices.",
+                        "Refactored code to enhance performance and reduce complexity while maintaining unit tests to ensure reliability."
                     ]
                 },
                 {
@@ -68,9 +68,9 @@
                     "duration": "2018 - 2021",
                     "location": "Bangalore, India",
                     "description": [
-                        "Took the initiative to independently develop and manage new functional modules that contributed to the growth of the company’s software.",
-                        "Addressed longstanding backlog issues by rapidly coding solutions while simultaneously gaining a deeper understanding of the software's functional modules.",
-                        "Became the primary point of contact for resolving issues during regression testing, thanks to my skills in developing fast, robust code."
+                        "Independently developed and managed new functional modules, contributing to the software's growth and enhancement.",
+                        "Proactively tackled longstanding backlog issues by delivering quick, effective solutions while deepening expertise in the software’s functional architecture.",
+                        "Served as the primary point of contact for issue resolution during regression testing, leveraging strong problem-solving skills and efficient code development."
                     ]
                 },
                 {
@@ -79,10 +79,10 @@
                     "duration": "01/2018 - 06/2018",
                     "location": "Bangalore, India",
                     "description": [
-                        "I received training on the company's software product, its features, and its market applications.",
-                        "Acquired knowledge of the new technology, Progress 4GL, which was employed in the software development process.",
-                        "Proactively resolved existing software bugs during the regression cycle and gathered new requirements for early-stage development.",
-                        "Excelled in the training and performed exceptionally well in developing new requirements."
+                        "Received hands-on training on the company’s software product, its features, and market applications.",
+                        "Gained expertise in Progress 4GL, the core technology used in the software development process.",
+                        "Proactively identified and resolved existing software bugs during the regression cycle while gathering new requirements for early-stage development.",
+                        "Excelled in training and demonstrated strong performance in developing new requirements."
                     ]
                 }
             ]
@@ -90,6 +90,16 @@
         "awards": {
             "title": "Honor & Awards",
             "content": [
+                {
+                    "title": "Hackathon Winner",
+                    "company": "eProductivity Software",
+                    "year": "2025"
+                },
+                {
+                    "title": "Doubles Badminton Champion",
+                    "company": "eProductivity Software",
+                    "year": "2024"
+                },
                 {
                     "title": "Best Performer of the Year",
                     "company": "eProductivity Software",
