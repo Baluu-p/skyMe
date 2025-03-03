@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { HttpClient } from '@angular/common/http';
+import { DeviceDetectorService } from './services/device-detector.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,10 @@ export class AppComponent {
     return JSON.stringify(this.resumeDetails, null, 5);
   }
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private deviceService: DeviceDetectorService
+  ) {
     this.loadResume();
   }
 
@@ -34,7 +38,7 @@ export class AppComponent {
   }
 
   loadResume() {
-    this.http.get('../assets/data.json').subscribe((res: any) => {
+    this.http.get('assets/data.json').subscribe((res: any) => {
       this.formattedJson = JSON.stringify(res);
     });
   }
@@ -48,41 +52,9 @@ export class AppComponent {
       pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
       pdf.save('Resume.pdf');
     });
+  }
 
-
-
-
-    // const printContent = this.resumeContainer.nativeElement.innerHTML;
-    // const originalContent = document.body.innerHTML;
-
-    // document.body.innerHTML = printContent;
-    // window.print();
-    // document.body.innerHTML = originalContent;
-    // location.reload(); // Reload to restore original content
-
-
-
-
-    //   const printContent = this.resumeContainer.nativeElement.innerHTML;
-    //   const styles = document.head.innerHTML; // Get all styles from the document head
-
-    //   const printWindow = window.open('', '', 'width=800,height=900');
-    //   printWindow!.document.write(`
-    //   <html>
-    //     <head>
-    //       <title>Resume</title>
-    //       ${styles} <!-- Copy all styles -->
-    //     </head>
-    //     <body>
-    //       ${printContent}
-    //     </body>
-    //   </html>
-    // `);
-
-    //   printWindow!.document.close();
-    //   setTimeout(() => {
-    //     printWindow!.print();
-    //     printWindow!.close();
-    //   }, 500); // Ensure styles are applied before printing
+  getDeviceType() {
+    return this.deviceService.getDeviceType();
   }
 }

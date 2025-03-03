@@ -78,6 +78,11 @@
     display: flex;
 }
 
+.fd-col {
+    display: flex;
+    flex-direction: column;
+}
+
 .icon-color {
     color: var(--primaryBg);
 }

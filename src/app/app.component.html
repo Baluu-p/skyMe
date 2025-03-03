@@ -1,4 +1,4 @@
-<div class="jc-center">
+<div class="jc-center" [ngClass]="{'mobile-device fd-col': getDeviceType() === 'mobile'}">
     <div *ngIf="!preview" class="pos-abs">
         <div class="buttons-container">
             <button class="box-btn" (click)="loadResume()">Load</button>
