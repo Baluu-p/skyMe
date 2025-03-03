@@ -16,11 +16,13 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "targets": {
+      "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/skyMe",
+            "outputPath": {
+              "base": "dist/skyMe"
+            },
             "index": "src/index.html",
             "polyfills": [
               "src/polyfills.ts"
@@ -74,6 +76,18 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "skyMe:build:production"
+            },
+            "development": {
+              "buildTarget": "skyMe:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

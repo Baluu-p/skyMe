@@ -16,6 +16,7 @@ export class AppComponent {
 
   title = 'skyMe';
   preview = false;
+  window = window;
 
   resumeDetails: any = [];
 

@@ -20,8 +20,8 @@ export class DeviceDetectorService {
 
   /** Determines the device type */
   getDeviceType(): string {
-    if (this.isTablet()) return 'Tablet';
-    if (this.isMobile()) return 'Mobile';
-    return 'Desktop';
+    if (this.isTablet()) return 'tablet';
+    if (this.isMobile()) return 'mobile';
+    return 'desktop';
   }
 }

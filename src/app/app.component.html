@@ -1,17 +1,4 @@
-<div class="jc-center" [ngClass]="{'mobile-device fd-col': getDeviceType() === 'mobile'}">
-    <div *ngIf="!preview" class="pos-abs">
-        <div class="buttons-container">
-            <button class="box-btn" (click)="loadResume()">Load</button>
-            <button class="box-btn" (click)="preview = !preview">Preview</button>
-            <button class="box-btn" (click)="downloadPDF()">Download PDF</button>
-        </div>
-        <textarea rows="1" [style.height.px]="750" [style.width.px]="750" [value]="formattedJson"
-            (input)="onChange($event)">
-        </textarea>
-
-
-    </div>
-
+<div [ngClass]="getDeviceType() == 'mobile'?'mobile-device fd-col' : 'd-flex'">
     <div #resumeContainer *ngFor="let profile of resumeDetails" class="resume-container">
         <div class="resume-header">
             <div class="resume-header-left">
@@ -78,6 +65,18 @@
                 <div class="col-5 light-detail">{{list.company}}</div>
                 <div class="col-2 light-detail text-right">{{list.year}}</div>
             </div>
+        </div>
+    </div>
+    <div *ngIf="!preview" class="print-disp-none fd-col w-100" [style.height.px]="window.innerHeight - 50">
+        <div class="buttons-container jc-center">
+            <button class="box-btn" (click)="loadResume()">Load</button>
+            <button class="box-btn" (click)="preview = !preview">Preview</button>
+            <button class="box-btn" (click)="downloadPDF()">Download PDF</button>
+        </div>
+        <div class="h-100">
+            <textarea rows="1" [style.height]="'100%'" [style.width]="'100%'" [value]="formattedJson"
+                (input)="onChange($event)">
+            </textarea>
         </div>
     </div>
 </div>
