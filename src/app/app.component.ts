@@ -45,14 +45,15 @@ export class AppComponent {
   }
 
   downloadPDF() {
-    html2canvas(this.resumeContainer.nativeElement).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      const imgWidth = 210;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-      pdf.save('Resume.pdf');
-    });
+    // html2canvas(this.resumeContainer.nativeElement).then(canvas => {
+    //   const imgData = canvas.toDataURL('image/png');
+    //   const pdf = new jsPDF('p', 'mm', 'a4');
+    //   const imgWidth = 210;
+    //   const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    //   pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+    //   pdf.save('Resume.pdf');
+    // });
+        this.window.print();
   }
 
   getDeviceType() {

@@ -14,31 +14,29 @@
                 <span *ngIf="profile.location">{{profile.location}}</span>
             </div>
         </div>
-        <div *ngIf="profile.summary" class="resume-section">
+        <div *ngIf="profile.summary?.title" class="resume-section">
             <div class="section-title">{{profile.summary.title}}</div>
             <div class="section-content">{{profile.summary.description}}</div>
-        </div>
-        <div *ngIf="profile.skills" class="resume-section">
-            <div class="section-title">{{profile.skills.title}}</div>
-            <div class="section-content">
-                <div *ngIf="profile.skills.language" class="section-skills">
-                    <span *ngFor="let skill of profile.skills.language">{{skill}}</span>
-                </div>
-                <div *ngIf="profile.skills.tools" class="mt-5 section-skills">
-                    <span *ngFor="let skill of profile.skills.tools">{{skill}}</span>
-                </div>
-            </div>
         </div>
         <div *ngIf="profile.workExperience" class="resume-section">
             <div class="section-title">{{profile.workExperience.title}}</div>
             <div *ngFor="let exp of profile.workExperience.experience" class="section-content section-experience">
                 <div class="exp-header">
                     <div class="row no-gutters d-flex jc-between">
-                        <div class="bold">{{exp.role}} |
-                            <span class="row no-gutters light-detail">{{exp.company}}</span>
+                        <div class="bold">{{profile.workExperience.roledriven ? exp.role: exp.company}}
+                            <span *ngIf="!(profile.workExperience.roledriven || exp.roles?.length > 0)" class="row no-gutters light-detail">| {{exp.role}}</span>
+                            <span *ngIf="profile.workExperience.roledriven" class="row no-gutters light-detail">| {{exp.company}}</span>
                         </div>
                         <div class="light-detail">{{exp.duration}}</div>
                     </div>
+                </div>
+                <div *ngFor="let role of exp.roles" class="exp-header-subroles">
+                    <div class="row no-gutters light-detail">{{role.name}}</div>
+                    <ul style="margin: 5px 0px;">
+                        <li *ngFor="let desc of role.description" class="row no-gutters description">
+                            <span>{{desc}}</span>
+                        </li>
+                    </ul>
                 </div>
                 <ul>
                     <li *ngFor="let desc of exp.description" class="row no-gutters description">
@@ -47,15 +45,35 @@
                 </ul>
             </div>
         </div>
-        <div *ngIf="profile.education" class="resume-section">
+        <div *ngIf="profile.skills" class="resume-section">
+            <div class="section-title">{{profile.skills.title + " & " + profile.education.title}}</div>
+            <div class="section-content d-flex">
+                <div style="width: 70%; align-items: right;">
+                    <div *ngIf="profile.skills.language" class="section-skills">
+                        <span *ngFor="let skill of profile.skills.language">{{skill}}</span>
+                    </div>
+                    <div *ngIf="profile.skills.tools" class="section-skills">
+                        <span *ngFor="let skill of profile.skills.tools">{{skill}}</span>
+                    </div>
+                </div>
+                <div style="width: 30%;">
+                    <div *ngFor="let list of profile.education.content" class="row no-gutters">
+                        <div class="col-12">{{list.institute}}</div>
+                        <div class="col-12 light-detail">{{list.degree}}</div>
+                        <div class="col-12 light-detail">{{list.duration}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div *ngIf="profile.education" class="resume-section">
             <div class="section-title">{{profile.education.title}}</div>
             <div *ngFor="let list of profile.education.content" class="section-content row no-gutters d-flex">
                 <div class="col-5">{{list.institute}}</div>
                 <div class="col-5 light-detail">{{list.degree}}</div>
                 <div class="col-2 light-detail text-right ">{{list.duration}}</div>
             </div>
-        </div>
-        <div *ngIf="profile.education" class="resume-section">
+        </div> -->
+        <div *ngIf="profile.awards" class="resume-section">
             <div class="section-title">{{profile.awards.title}}</div>
             <div *ngFor="let list of profile.awards.content" class="section-content row no-gutters d-flex pb-5">
                 <div class="col-5">
@@ -70,7 +88,7 @@
     <div *ngIf="!preview" class="print-disp-none fd-col w-100" [style.height.px]="window.innerHeight - 50">
         <div class="buttons-container jc-center">
             <button class="box-btn" (click)="loadResume()">Load</button>
-            <button class="box-btn" (click)="preview = !preview">Preview</button>
+            <!-- <button class="box-btn" (click)="preview = !preview">Preview</button> -->
             <button class="box-btn" (click)="downloadPDF()">Download PDF</button>
         </div>
         <div class="h-100">
